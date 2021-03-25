@@ -6,10 +6,10 @@ const config = {
     trailingSlash: false,
   },
   header: {
-    logo: 'Samsamhan',
+    logo: '',
     logoLink: 'https://samsamhan.github.io/',
     title:
-      "<a href='https://samsamhan.github.io/'>Samsamhan</a>",
+      "",
     githubUrl: 'https://github.com/samsamhan/samsamhan.github.io',
     helpUrl: '',
     tweetText: '',
@@ -42,7 +42,7 @@ const config = {
     description: 'Documentation built with mdx. Powering hasura.io/learn ',
     ogImage: null,
     docsLocation: 'https://github.com/samsamhan/samsamhan.github.io/tree/ssh_blog/content',
-    favicon: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg',
+    favicon: 'src/images/contents/ssh_profile.png',
   },
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
@@ -56,7 +56,7 @@ const config = {
       crossOrigin: 'use-credentials',
       icons: [
         {
-          src: 'src/pwa-512.png',
+          src: 'src/components/images/ssh_profile.png',
           sizes: `512x512`,
           type: `image/png`,
         },

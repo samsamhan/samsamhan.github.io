@@ -10,6 +10,7 @@ import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
 
 const help = require('./images/help.svg');
+const ssh_profile = require('./images/ssh_profile.png')
 
 const isSearchEnabled = config.header.search && config.header.search.enabled ? true : false;
 
@@ -96,6 +97,13 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
         <div className={'navBarWrapper'}>
           <nav className={'navBarDefault'}>
             <div className={'navBarHeader'}>
+              <Link to={finalLogoLink} className={'navBarBrand'}>
+                <img
+                  className={'img-responsive displayInline'}
+                  src={ssh_profile}
+                  alt={'logo'}
+                />
+              </Link>
               <div
                 className={'headerTitle displayInline'}
                 dangerouslySetInnerHTML={{ __html: headerTitle }}
