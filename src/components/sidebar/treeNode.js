@@ -7,6 +7,8 @@ import Link from '../link';
 const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, ...rest }) => {
   const isCollapsed = collapsed[url];
 
+  console.log("collapsed",url, collapsed)
+
   const collapse = () => {
     setCollapsed(url);
   };

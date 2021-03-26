@@ -35,7 +35,7 @@ const config = {
     frontline: false,
     ignoreIndex: true,
     title:
-      "<a href='https://samsamhan.github.io/'>graphql </a><div class='greenCircle'></div><a href='https://samsamhan.github.io/'>react</a>",
+      "삼삼한 Blog",
   },
   siteMetadata: {
     title: 'Gatsby Gitbook Boilerplate | Hasura',
