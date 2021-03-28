@@ -5,9 +5,8 @@ import config from '../../../config';
 import Link from '../link';
 
 const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, ...rest }) => {
-  const isCollapsed = collapsed[url];
-
-  console.log("collapsed",url, collapsed)
+  const isCollapsedTmp = collapsed[url];
+  const isExpanded = ((url === undefined || isCollapsedTmp !== undefined) && !isCollapsedTmp);
 
   const collapse = () => {
     setCollapsed(url);
@@ -32,13 +31,13 @@ const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, 
           {title}
           {!config.sidebar.frontLine && title && hasChildren ? (
             <button onClick={collapse} aria-label="collapse" className="collapser">
-              {!isCollapsed ? <OpenedSvg /> : <ClosedSvg />}
+              {isExpanded ? <OpenedSvg /> : <ClosedSvg />}
             </button>
           ) : null}
         </Link>
       )}
 
-      {!isCollapsed && hasChildren ? (
+      {isExpanded && hasChildren ? (
         <ul>
           {items.map((item, index) => (
             <TreeNode

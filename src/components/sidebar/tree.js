@@ -96,13 +96,7 @@ const calculateTreeData = edges => {
       }
     }
     // sort items alphabetically.
-    prevItems.map(item => {
-      item.items = item.items.sort(function(a, b) {
-        if (a.label < b.label) return -1;
-        if (a.label > b.label) return 1;
-        return 0;
-      });
-    });
+    sortCustom(prevItems);
     const slicedLength =
       config.gatsby && config.gatsby.trailingSlash ? parts.length - 2 : parts.length - 1;
 
@@ -114,6 +108,22 @@ const calculateTreeData = edges => {
     return accu;
   }, tree);
 };
+
+const sortCustom = (tmpItems) => {
+
+  tmpItems.map(item => {
+    item.items = item.items.sort(function(a, b) {
+      if (a.label < b.label) return -1;
+      if (a.label > b.label) return 1;
+      return 0;
+    });
+
+    if(item.items){
+      sortCustom(item.items)
+    }
+  });
+
+}
 
 const Tree = ({ edges }) => {
   let [treeData] = useState(() => {
@@ -134,7 +144,6 @@ const Tree = ({ edges }) => {
 
   const toggle = url => {
 
-    console.log("url",url)
     setCollapsed({
       ...collapsed,
       [url]: !collapsed[url],
