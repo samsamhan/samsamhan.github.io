@@ -133,12 +133,15 @@ const Tree = ({ edges }) => {
   const defaultCollapsed = {};
 
   treeData.items.forEach(item => {
-
+    // 메뉴 기본 callapsed로 변경
+    defaultCollapsed[item.url] = true;
+    /*
     if (config.sidebar.collapsedNav && config.sidebar.collapsedNav.includes(item.url)) {
       defaultCollapsed[item.url] = true;
     } else {
-      defaultCollapsed[item.url] = true;
+      defaultCollapsed[item.url] = false;
     }
+    */
   });
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
 
