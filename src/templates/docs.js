@@ -7,7 +7,6 @@ import { Layout, Link } from '$components';
 import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
-import Comments from '../components/Comments.js'
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -103,7 +102,6 @@ export default class MDXRuntimeTest extends Component {
         </div>
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
-          <Comments/>
         </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
