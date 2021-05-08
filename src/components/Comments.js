@@ -10,7 +10,7 @@ const Comments = () => {
       src:'https://utteranc.es/client.js'
       , repo: 'samsamhan/ssh_blog_comments'
       , theme: 'github-light'
-      , 'issue-term': 'pathname'
+      , 'issue-term': 'url'
       , async: true
       , crossorigin: 'anonymous'
     }
